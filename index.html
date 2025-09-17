@@ -22,23 +22,39 @@
       position:sticky;
       top:0;
       z-index:1000;
+      animation:fadeInDown 1s ease-out;
     }
     header h1{font-size:1.6em;font-weight:700;margin-bottom:5px;}
     .datetime{font-size:0.9em;font-weight:600;}
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity:0; transform:translateY(-20px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @keyframes pulse {
+      0% {transform:scale(1);}
+      50% {transform:scale(1.05);}
+      100% {transform:scale(1);}
+    }
+    @keyframes slideInLeft {
+      from {opacity:0; transform:translateX(-30px);}
+      to {opacity:1; transform:translateX(0);}
+    }
 
     /* Buttons Section */
     .buttons-section{display:flex;flex-direction:column;align-items:center;margin:15px auto;width:95%;max-width:600px;gap:10px;}
     .btn{width:100%;display:flex;align-items:center;justify-content:center;padding:12px 16px;text-decoration:none;color:#fff;background:#28a745;border-radius:10px;font-weight:600;font-size:0.95em;transition:transform .3s,background .3s;}
     .btn i{margin-right:8px;}
-    .btn:hover{transform:translateY(-3px);background:#218838;}
+    .btn:hover{transform:translateY(-5px) scale(1.02);background:#218838;}
 
     /* WhatsApp Button */
     .whatsapp-section{text-align:center;margin:20px 0;}
-    .whatsapp-btn{background:#25D366;color:#fff;padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-block;transition:transform .3s,background .3s;}
-    .whatsapp-btn:hover{transform:translateY(-3px);background:#1ebe57;}
+    .whatsapp-btn{background:#25D366;color:#fff;padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-block;transition:transform .3s,background .3s;animation:pulse 2s infinite;}
+    .whatsapp-btn:hover{transform:translateY(-5px);background:#1ebe57;}
 
     /* Footer */
-    footer{margin-top:auto;background:#343a40;color:#fff;padding:20px;}
+    footer{margin-top:auto;background:#343a40;color:#fff;padding:20px;animation:slideInLeft 1s ease;}
     footer h2{font-size:1.2em;font-weight:700;margin-bottom:10px;}
     .footer-content{display:flex;align-items:center;gap:15px;}
     .footer-content img{width:60px;height:60px;border-radius:50%;object-fit:cover;}
@@ -59,9 +75,11 @@
     <div class="datetime" id="datetime"></div>
   </header>
 
-  <!-- ✅ Notification Section Removed -->
-
   <div class="buttons-section">
+    <!-- ✅ Gyan Sankalp Portal First -->
+    <a class="btn" href="https://gyansankalp.nic.in/Home/Login.aspx#" target="_blank">
+      <i class="fas fa-lightbulb"></i> Gyan Sankalp Portal
+    </a>
     <a class="btn" href="https://rajshaladarpan.rajasthan.gov.in/Home/Public2/OfficeLoginNew.aspx" target="_blank">
       <i class="fas fa-building"></i> Shala Darpan Office Login
     </a>
@@ -90,8 +108,8 @@
 
   <footer>
     <h2>About Us</h2>
-    <p style="margin-bottom:12px;">I am learning web designing and this is one of my projects.  
-      The goal of this website is to make teachers’ work easier by providing all important portals in one place.</p>
+    <p style="margin-bottom:12px;"> I am a dedicated Teacher who is also passionate about learning HTML, CSS, and JavaScript.
+This project reflects my journey in web designing, created with the aim of making every teacher’s work easier — by providing all important portals at one single place.</p>
     <div class="footer-content">
       <img src="photo.jpg.jpg" alt="Raj Joshi">
       <div class="info">
