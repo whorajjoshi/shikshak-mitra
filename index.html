@@ -23,133 +23,32 @@
       top:0;
       z-index:1000;
     }
-    header h1{
-      font-size:1.6em;
-      font-weight:700;
-      margin-bottom:-3px;
-    }
-    .datetime{
-      font-size:0.9em;
-      font-weight:600;
-    }
-
-    /* News Section */
-    .news-section{
-      background:#fff;
-      padding:15px;
-      margin:12px auto;
-      width:92%;
-      max-width:850px;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      overflow:hidden;
-      height:160px;
-      position:relative;
-    }
-    .news-title{
-      font-weight:600;
-      margin-bottom:10px;
-      font-size:1.1em;
-      color:#007bff;
-      background:#fff;
-      position:relative;
-      z-index:2;
-      padding-bottom:5px;
-    }
-    .news-container{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      animation:scrollUp 8s linear infinite;
-      background:#fff;
-      padding-top:5px;
-    }
-    .news-item{margin:6px 0;padding:4px;}
-    .news-item a{
-      text-decoration:none;
-      color:#007bff;
-      font-weight:500;
-      font-size:0.9em;
-    }
-    .news-item a:hover{color:#0056b3;}
-
-    @keyframes scrollUp{
-      0%{transform:translateY(100%);}
-      100%{transform:translateY(-100%);}
-    }
+    header h1{font-size:1.6em;font-weight:700;margin-bottom:5px;}
+    .datetime{font-size:0.9em;font-weight:600;}
 
     /* Buttons Section */
-    .buttons-section{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      margin:15px auto;
-      width:95%;
-      max-width:600px;
-      gap:10px;
-    }
-    .btn{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      text-decoration:none;
-      color:#fff;
-      background:#28a745;
-      border-radius:10px;
-      font-weight:600;
-      font-size:0.95em;
-      transition:transform .3s,background .3s;
-    }
+    .buttons-section{display:flex;flex-direction:column;align-items:center;margin:15px auto;width:95%;max-width:600px;gap:10px;}
+    .btn{width:100%;display:flex;align-items:center;justify-content:center;padding:12px 16px;text-decoration:none;color:#fff;background:#28a745;border-radius:10px;font-weight:600;font-size:0.95em;transition:transform .3s,background .3s;}
     .btn i{margin-right:8px;}
     .btn:hover{transform:translateY(-3px);background:#218838;}
 
     /* WhatsApp Button */
     .whatsapp-section{text-align:center;margin:20px 0;}
-    .whatsapp-btn{
-      background:#25D366;
-      color:#fff;
-      padding:12px 22px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:600;
-      display:inline-block;
-      transition:transform .3s,background .3s;
-    }
+    .whatsapp-btn{background:#25D366;color:#fff;padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-block;transition:transform .3s,background .3s;}
     .whatsapp-btn:hover{transform:translateY(-3px);background:#1ebe57;}
 
     /* Footer */
-    footer{
-      margin-top:auto;
-      background:#343a40;
-      color:#fff;
-      padding:10px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      flex-wrap:wrap;
-    }
-    footer img{
-      width:55px;
-      height:55px;
-      border-radius:50%;
-      object-fit:cover;
-      margin-right:15px;
-    }
-    footer .info .name{font-weight:700;font-size:1em;}
-    footer .info .job,footer .info .location{font-size:0.85em;}
+    footer{margin-top:auto;background:#343a40;color:#fff;padding:20px;}
+    footer h2{font-size:1.2em;font-weight:700;margin-bottom:10px;}
+    .footer-content{display:flex;align-items:center;gap:15px;}
+    .footer-content img{width:60px;height:60px;border-radius:50%;object-fit:cover;}
+    .footer-content .info .name{font-weight:700;font-size:1em;}
+    .footer-content .info .job,
+    .footer-content .info .location{font-size:0.85em;}
 
-    /* ✅ Mobile me bhi row hi rahega */
     @media(max-width:600px){
-      footer{
-        flex-direction:row;
-        align-items:center;
-        text-align:left;
-      }
-      footer img{
-        margin:0 10px 0 0;
-      }
+      .footer-content{flex-direction:row;align-items:center;}
+      .footer-content img{margin:0;}
     }
   </style>
 </head>
@@ -160,15 +59,7 @@
     <div class="datetime" id="datetime"></div>
   </header>
 
-  <div class="news-section">
-    <div class="news-title">📢 Latest Notifications</div>
-    <div id="news-container" class="news-container">
-      <div class="news-item"><a href="https://rajshaladarpan.rajasthan.gov.in/" target="_blank">Shala Darpan Portal Updates</a></div>
-      <div class="news-item"><a href="https://udiseplus.gov.in/" target="_blank">UDISE Plus New Teacher Data Entry</a></div>
-      <div class="news-item"><a href="https://sso.rajasthan.gov.in/signin" target="_blank">SSO Login Services Updated</a></div>
-      <div class="news-item"><a href="https://sanchalan.rajasthan.gov.in/Login.aspx" target="_blank">SNA Login New Features</a></div>
-    </div>
-  </div>
+  <!-- ✅ Notification Section Removed -->
 
   <div class="buttons-section">
     <a class="btn" href="https://rajshaladarpan.rajasthan.gov.in/Home/Public2/OfficeLoginNew.aspx" target="_blank">
@@ -198,24 +89,27 @@
   </div>
 
   <footer>
-    <img src="photo.jpg.jpg" alt="Raj Joshi">
-    <div class="info">
-      <div class="name">Raj Joshi</div>
-      <div class="job">Teacher Level 1</div>
-      <div class="location">Posting : GPS Lambired Hirata</div>
+    <h2>About Us</h2>
+    <p style="margin-bottom:12px;">I am learning web designing and this is one of my projects.  
+      The goal of this website is to make teachers’ work easier by providing all important portals in one place.</p>
+    <div class="footer-content">
+      <img src="profile.jpg.jpg" alt="Raj Joshi">
+      <div class="info">
+        <div class="name">Raj Joshi</div>
+        <div class="job">Teacher Level 1</div>
+        <div class="location">Posting : GPS Lambired Hirata</div>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Live Date & Time
     function updateDateTime(){
       const now=new Date();
       const options={weekday:'short',year:'numeric',month:'short',day:'numeric'};
       const time=now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
       document.getElementById('datetime').innerText=`${now.toLocaleDateString('en-US',options)} | ${time}`;
     }
-    setInterval(updateDateTime,1000);
-    updateDateTime();
+    setInterval(updateDateTime,1000);updateDateTime();
   </script>
 
 </body>
