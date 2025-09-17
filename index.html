@@ -1,4 +1,4 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
     header h1{
       font-size:1.6em;
       font-weight:700;
-      margin-bottom:4px;
+      margin-bottom:-3px;
     }
     .datetime{
       font-size:0.9em;
@@ -60,8 +60,8 @@
       position:absolute;
       bottom:0;
       width:100%;
-      animation:scrollUp 20s linear infinite;
-      background:#fff; /* ✅ background white fix */
+      animation:scrollUp 8s linear infinite;
+      background:#fff;
       padding-top:5px;
     }
     .news-item{margin:6px 0;padding:4px;}
@@ -124,10 +124,11 @@
       margin-top:auto;
       background:#343a40;
       color:#fff;
-      padding:18px 25px;
+      padding:10px 20px;
       display:flex;
       align-items:center;
-      justify-content:flex-start; /* ✅ photo left align */
+      justify-content:flex-start;
+      flex-wrap:wrap;
     }
     footer img{
       width:55px;
@@ -139,9 +140,16 @@
     footer .info .name{font-weight:700;font-size:1em;}
     footer .info .job,footer .info .location{font-size:0.85em;}
 
+    /* ✅ Mobile me bhi row hi rahega */
     @media(max-width:600px){
-      footer{flex-direction:column;align-items:flex-start;text-align:left;}
-      footer img{margin:0 0 8px 0;}
+      footer{
+        flex-direction:row;
+        align-items:center;
+        text-align:left;
+      }
+      footer img{
+        margin:0 10px 0 0;
+      }
     }
   </style>
 </head>
@@ -194,7 +202,7 @@
     <div class="info">
       <div class="name">Raj Joshi</div>
       <div class="job">Teacher Level 1</div>
-      <div class="location">Posting Location: GPS Lambired Hirata</div>
+      <div class="location">Posting : GPS Lambired Hirata</div>
     </div>
   </footer>
 
@@ -206,7 +214,8 @@
       const time=now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
       document.getElementById('datetime').innerText=`${now.toLocaleDateString('en-US',options)} | ${time}`;
     }
-    setInterval(updateDateTime,1000);updateDateTime();
+    setInterval(updateDateTime,1000);
+    updateDateTime();
   </script>
 
 </body>
